@@ -47,4 +47,4 @@ jobs:
       env:
         # 这里需要你在仓库设置里添加一个带推送权限的 Personal Access Token（PAT）
         # 并把它命名为 GITHUB_PAT，保证自动推送成功
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

@@ -6,7 +6,7 @@ def get_clash_nodes():
     
     # 你可以添加或替换这些订阅链接
     urls = [
-        "https://raw.githubusercontent.com/ermaozi01/free_clash_subscription/main/clash.yaml",
+        "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
         "https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/clash.yaml",
         "https://raw.githubusercontent.com/ermaozi/free_clash_node/main/clash/clash.yaml",
     ]

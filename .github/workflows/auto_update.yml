@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # 关闭自动凭据，方便后面手动配置
+
+      - name: Set up Git credentials for pushing
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -31,16 +41,12 @@ jobs:
           python scripts/run_all.py
 
       - name: Commit and push changes
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/*
           CHANGES=$(git diff --cached --name-only)
           if [ -n "$CHANGES" ]; then
             git commit -m "Auto update subscription files [skip ci]"
-            git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git push origin HEAD:main
           else
             echo "No changes to commit"
           fi

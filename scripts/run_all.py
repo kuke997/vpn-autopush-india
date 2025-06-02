@@ -12,6 +12,8 @@ import time
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
+WORKER_BASE_URL = "https://vpn4india.ttnf918.workers.dev"  # 你的 Workers 域名
+
 def ensure_data_dir():
     if not os.path.exists("data"):
         os.makedirs("data")
@@ -41,9 +43,9 @@ def send_to_telegram(clash, v2ray, ss):
     text += f"✅ V2Ray 链接数：{len(v2ray)}\n"
     text += f"✅ Shadowsocks 链接数：{len(ss)}\n\n"
     text += "📎 订阅文件：\n"
-    text += "👉 Clash: https://yourdomain.github.io/data/clash.yaml\n"
-    text += "👉 V2Ray: https://yourdomain.github.io/data/v2ray.txt\n"
-    text += "👉 Shadowsocks: https://yourdomain.github.io/data/shadowsocks.txt\n\n"
+    text += f"👉 Clash: {WORKER_BASE_URL}/clash\n"
+    text += f"👉 V2Ray: {WORKER_BASE_URL}/v2ray\n"
+    text += f"👉 Shadowsocks: {WORKER_BASE_URL}/ss\n\n"
     text += "#VPN #FreeVPN #Clash #V2Ray #Shadowsocks #IndiaVPN"
 
     try:

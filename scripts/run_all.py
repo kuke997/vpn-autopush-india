@@ -9,8 +9,9 @@ import yaml
 import telegram
 import time
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHANNEL_ID = os.getenv("CHANNEL_ID")
+# 修改环境变量名，和 Actions 里保持一致
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 
 WORKER_BASE_URL = "https://vpn4india.ttnf918.workers.dev"  # 你的 Workers 域名
 

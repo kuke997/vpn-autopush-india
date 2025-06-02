@@ -2,8 +2,8 @@ name: Auto Update VPN Data
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # 每天凌晨 3 点 UTC（印度上午 8:30）
-  workflow_dispatch:      # 允许手动触发
+    - cron: '0 3 * * *'  # 每天 UTC 3 点（印度早上 8:30）
+  workflow_dispatch:
 
 jobs:
   update:
@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run script to update VPN files
+      - name: Run update script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}

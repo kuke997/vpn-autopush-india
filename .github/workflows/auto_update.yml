@@ -2,7 +2,7 @@ name: Auto Update VPN Data
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # 每天 UTC+0 3:00（印度时间 8:30）
+    - cron: '0 3 * * *'  # 每天 UTC+0 3:00（印度早上 8:30）
   workflow_dispatch:
 
 jobs:

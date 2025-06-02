@@ -6,9 +6,9 @@ def get_clash_nodes():
     
     # 你可以添加或替换这些订阅链接
     urls = [
-        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/clash.yaml",
-        "https://sub.v1.mk/clash.yaml",
-        "https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet.yaml",
+        "https://raw.githubusercontent.com/ermaozi01/free_clash_subscription/main/clash.yaml",
+        "https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/clash.yaml",
+        "https://raw.githubusercontent.com/ermaozi/free_clash_node/main/clash/clash.yaml",
     ]
 
     for url in urls:
